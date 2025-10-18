@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        input[type="search"]::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+    
+    <header class="flex items-center justify-between  w-full m-auto">
+        <div class="text-blue-800 ml-3 text-xl md:text-2xl lg:text-3xl xl:text-4xl basis-1/6 font-bold">Shimul</div>
+        <div class="flex items-center basis-5/6">
+            <div class="flex justify-between rounded-md hover:ring-2  mt-4 ml-4 p-3 md:w-4/5 border-1 w-2/3 hover:ring-indigo-600 ">
+            <input type="search" class="outline-none  w-full" placeholder="Search items">
+            <span class="">
+                <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </span>
+        </div>
+        <div class=" cursor-pointer mt-2 ms-7 md:hidden" id="bar">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        </div>
+        <div >
+            <button  id="close_bar" class="ms-7 mt-2 hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        </div>
+        <div class="md:basis-2/6 hidden" id="basis_r">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+            </svg>
+
+
+        </div>
+        
+        
+    </header>
+    <nav class="mt-1 hidden  md:flex" id="nav_menu">
+        <ul class="flex flex-col justify-around md:flex-row md:w-full m-auto bg-blue-500 text-white">
+            <li class="p-3 "><a href="#">Home</a></li>
+            <li class="p-3 "><a href="#">Man's</a></li>
+            <li class="p-3 "><a href="#">Women's</a></li>
+            <li class="p-3 "><a href="#">Jewelry</a></li>
+            <li class="p-3 "><a href="#">Perfume</a></li>
+            <li class="p-3 "><a href="#">Blog</a></li>
+            <li class="p-3 "><a href="#">Hot offers</a></li>
+        </ul>
+    </nav>
+    <script>
+        let Basic_r=document.getElementById("basis_r")
+        Basic_r.addEventListener()
+        let closeBar=document.getElementById("close_bar")
+        let navMenu=document.getElementById("nav_menu")
+        
+        let Bar=document.getElementById("bar")
+        Bar.addEventListener('click',function(){
+            navMenu.classList.remove("hidden");
+            bar.classList.add("hidden");
+            closeBar.classList.remove("hidden")
+        })
+        closeBar.addEventListener('click',function(){
+            navMenu.classList.add("hidden");
+            closeBar.classList.add("hidden");
+            bar.classList.remove("hidden");
+        })
+         
+    </script>
+</body>
+</html>
