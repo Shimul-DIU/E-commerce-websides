@@ -5,3 +5,7 @@
 .list{
     padding:8px
 }
+.darkmode *{
+    background-color: black !important;
+    
+}

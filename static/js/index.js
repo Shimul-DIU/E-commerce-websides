@@ -1,4 +1,6 @@
 let Bar=document.getElementById("bar");
+let day=document.querySelector(".white");
+let night=document.querySelector(".dark");
 let Catagories=document.getElementById("ct");
 let closBar=document.getElementById("close_bar");
 let Man=document.getElementById("man")
@@ -11,6 +13,18 @@ let Dopedowm3=document.getElementById("dopdowm3")
 let LI=document.querySelectorAll('.l1');
 let catagoriz_text=document.querySelector('section div div ul');
 let seton=document.querySelector('#default-carousel');
+day.addEventListener('click',()=>{
+    document.body.style.backgroundColor="black"
+    document.body.classList.add('darkmode')
+    day.classList.add('hidden')
+    night.classList.remove('hidden')
+})
+night.addEventListener('click',()=>{
+    document.body.style.backgroundColor="white"
+    document.body.classList.remove('darkmode')
+    day.classList.remove('hidden')
+    night.classList.add('hidden')
+})
 if (window.innerWidth<768){
     
     UnorderList.classList.add('flex-col')

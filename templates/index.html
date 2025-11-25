@@ -1,153 +1,161 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>{% block title %}Ecommerce{% endblock %}</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{% static 'css/index.css' %}">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <style>
-    input[type="search"]::-webkit-search-cancel-button {
-      -webkit-appearance: none;
-      appearance: none;
-    }
-  </style>
-</head>
-
-<body class="bg-gray-200">
-
-  <!-- 🌐 Top Navbar -->
-  <nav class="bg-gray-200 flex justify-between p-2">
-    <div class="flex space-x-3">
-      <a href="https://www.facebook.com/shimul.mia.79462" target="_blank"><i class="fa-brands fa-facebook text-xl"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fa-brands fa-github text-xl"></i></a>
-      <a href="https://www.linkedin.com/in/shimul.mia.79462" target="_blank"><i class="fa-brands fa-linkedin text-xl"></i></a>
-    </div>
-    <div>
-      <p class="hidden md:flex">Free Shipping This Week — Order Over $55</p>
-    </div>
-    <div class="flex space-x-2">
-      <select class="hover:bg-white cursor-pointer border p-1">
-        <option value="usd">USD &dollar;</option>
-        <option value="taka">TAKA &#2547;</option>
-      </select>
-      <select class="hover:bg-white cursor-pointer border p-1">
-        <option>English</option>
-        <option>Bangla</option>
-        <option>French</option>
-      </select>
-    </div>
-  </nav>
-
-  <!-- 🏪 Main Header -->
-  <header class="flex justify-between items-center bg-white p-2 shadow">
-    <div class="text-blue-800 text-2xl font-bold ms-4">Shimul</div>
-
-    <!-- Search Box -->
-    <div class="flex items-center border border-gray-400 rounded-md p-2 w-1/2">
-      <input type="search" placeholder="Search items..." class="outline-none w-full text-sm" />
-      <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
-    </div>
-
-    <!-- Icons -->
-    <div class="flex space-x-4">
-      <i class="fa-regular fa-user text-2xl cursor-pointer"></i>
-      <i class="fa-regular fa-heart text-2xl cursor-pointer"></i>
-      <i class="fa-solid fa-bag-shopping text-2xl cursor-pointer"></i>
-    </div>
-  </header>
-
-  <!-- 🧭 Main Navigation -->
-  <nav>
-    <ul class="flex justify-around bg-gray-700 text-white">
-      <li class="p-2 hover:bg-gray-600 cursor-pointer">Home</li>
-      <li class="p-2 hover:bg-gray-600 cursor-pointer">Man’s</li>
-      <li class="p-2 hover:bg-gray-600 cursor-pointer">Women’s</li>
-      <li class="p-2 hover:bg-gray-600 cursor-pointer">Jewelry</li>
-      <li class="p-2 hover:bg-gray-600 cursor-pointer">Hot Offers</li>
-      <li class="p-2 hover:bg-gray-600 cursor-pointer">Blog</li>
-    </ul>
-  </nav>
-
-  <!-- 📦 Categories + Carousel Section -->
-  <section class="flex justify-start ms-2 my-4 space-x-2">
-    <!-- Categories -->
-    <div class="w-1/4 bg-white rounded-lg shadow">
-      <div class="bg-blue-600 text-white p-2 font-semibold">Categories</div>
-      <ul class="text-gray-700 ps-4 py-2 space-y-1">
-        <li class="hover:bg-blue-200 p-1 rounded"><a href="#">Man’s</a></li>
-        <li class="hover:bg-blue-200 p-1 rounded"><a href="#">Women’s</a></li>
-        <li class="hover:bg-blue-200 p-1 rounded"><a href="#">Jewelry</a></li>
-        <li class="hover:bg-blue-200 p-1 rounded"><a href="#">Watch</a></li>
-        <li class="hover:bg-blue-200 p-1 rounded"><a href="#">Fishing</a></li>
-      </ul>
-    </div>
-
-    <!-- Carousel -->
-    <div class="w-3/4">
-      <div id="default-carousel" class="relative w-full" data-carousel="slide">
-        <!-- Carousel wrapper -->
-        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{% static 'Images/online-shopping-banner_23-2148681595.jpg' %}" class="absolute block w-full" alt="Banner 1">
-          </div>
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{% static 'Images/gradient-shopping-discount-horizontal-sale-banner_23-2150321996.jpg' %}" class="absolute block w-full" alt="Banner 2">
-          </div>
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{% static 'Images/online-shopping-template-banner_23-2148795108.jpg' %}" class="absolute block w-full" alt="Banner 3">
-          </div>
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="{% static 'Images/Copilot_20251022_120054.png' %}" class="absolute block w-full" alt="Banner 4">
-          </div>
-        </div>
-        <!-- Controls -->
-        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group" data-carousel-prev>
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-            <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-          </span>
-        </button>
-        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group" data-carousel-next>
-          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-            <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-          </span>
-        </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Ecommerce{% endblock %}</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      input[type="search"]::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 bd">
+    <!-- 🌐 Top Navbar -->
+    <nav class="bg-gray-200 flex justify-between p-2">
+      <div class="flex space-x-3">
+        <i class="fa-regular fa-user text-2xl cursor-pointer"></i>
+        <i class="fa-regular fa-heart text-2xl cursor-pointer"></i>
+        <i class="fa-solid fa-bag-shopping text-2xl cursor-pointer"></i> {% comment %} <a href="https://www.facebook.com/shimul.mia.79462" target="_blank">
+          <i class="fa-brands fa-facebook text-xl"></i>
+        </a>
+        <a href="https://github.com" target="_blank">
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shimul.mia.79462" target="_blank">
+          <i class="fa-brands fa-linkedin text-xl"></i>
+        </a>
+      </div> {% endcomment %} <div>
+        <p class="hidden md:flex">Free Shipping This Week — Order Over $55</p>
       </div>
-    </div>
-  </section>
-{% for product in products %}
-<img src="{{ product.img.url }}" alt="" class="w-44">
-<video Controls class="w-44">
-   <source  src="{{ product.song.url }}" type="video/mp4">
-</video>
-{% endfor %}
-  <!-- 🌐 Footer -->
-  <footer class="bg-gray-900 text-white text-center py-3">
-    <p>© 2025 Shimul Ecommerce | All Rights Reserved</p>
-  </footer>
+      <div class="flex space-x-2">
+        <button class="white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+          </svg>
+        </button>
+        <button class="dark hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+          </svg>
 
-  <!-- Flowbite JS -->
-  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
-
-  <!-- Custom JS -->
-  <script src="{% static 'index.js' %}"></script>
-
-</body>
+        </button>
+        <select class="hover:bg-white cursor-pointer border p-1">
+          <option>English</option>
+          <option selected>Bangla</option>
+          <o ption>French</o>
+        </select>
+      </div>
+    </nav>
+    <!-- 🏪 Main Header -->
+    <header class="flex justify-between items-center bg-white p-2 shadow">
+      <div class="text-blue-800 text-2xl font-bold ms-4">Shimul</div>
+      <!-- Search Box -->
+      <div class="flex items-center border border-gray-400 rounded-md p-2 w-1/2">
+        <input type="search" placeholder="Search items..." class="outline-none w-full text-sm" />
+        <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+      </div>
+      <!-- Icons -->
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="flex space-x-4"></div>
+    </header>
+    <!-- 🧭 Main Navigation -->
+    <nav>
+      <ul class="flex justify-around bg-gray-700 text-white">
+        <li class="p-2 hover:bg-gray-600 cursor-pointer">Home</li>
+        <li class="p-2 hover:bg-gray-600 cursor-pointer">Man’s</li>
+        <li class="p-2 hover:bg-gray-600 cursor-pointer">Women’s</li>
+        <li class="p-2 hover:bg-gray-600 cursor-pointer">Jewelry</li>
+        <li class="p-2 hover:bg-gray-600 cursor-pointer">Hot Offers</li>
+        <li class="p-2 hover:bg-gray-600 cursor-pointer">Blog</li>
+      </ul>
+    </nav>
+    <!-- 📦 Categories + Carousel Section -->
+    <section class="flex justify-start ms-2 my-4 space-x-2">
+      <!-- Categories -->
+      <div class="w-1/4 bg-white rounded-lg shadow">
+        <div class="bg-blue-600 text-white p-2 font-semibold">Categories</div>
+        <ul class="text-gray-700 ps-4 py-2 space-y-1">
+          <li class="hover:bg-blue-200 p-1 rounded">
+            <a href="#">Man’s</a>
+          </li>
+          <li class="hover:bg-blue-200 p-1 rounded">
+            <a href="#">Women’s</a>
+          </li>
+          <li class="hover:bg-blue-200 p-1 rounded">
+            <a href="#">Jewelry</a>
+          </li>
+          <li class="hover:bg-blue-200 p-1 rounded">
+            <a href="#">Watch</a>
+          </li>
+          <li class="hover:bg-blue-200 p-1 rounded">
+            <a href="#">Fishing</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Carousel -->
+      <div class="w-3/4">
+        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="{% static 'Images/online-shopping-banner_23-2148681595.jpg' %}" class="absolute block w-full" alt="Banner 1">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="{% static 'Images/gradient-shopping-discount-horizontal-sale-banner_23-2150321996.jpg' %}" class="absolute block w-full" alt="Banner 2">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="{% static 'Images/online-shopping-template-banner_23-2148795108.jpg' %}" class="absolute block w-full" alt="Banner 3">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="{% static 'Images/Copilot_20251022_120054.png' %}" class="absolute block w-full" alt="Banner 4">
+            </div>
+          </div>
+          <!-- Controls -->
+          <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+              <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+              </svg>
+            </span>
+          </button>
+          <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
+              <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section> {% for product in products %} <img src="{{ product.img.url }}" alt="" class="w-44">
+    <video Controls class="w-44">
+      <source src="{{ product.song.url }}" type="video/mp4">
+    </video> {% endfor %}
+    <!-- 🌐 Footer -->
+    <footer class="bg-gray-900 text-white text-center py-3">
+      <p>© 2025 Shimul Ecommerce | All Rights Reserved</p>
+    </footer>
+    <!-- Flowbite JS -->
+    <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
 </html>
