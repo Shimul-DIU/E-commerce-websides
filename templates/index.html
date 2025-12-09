@@ -17,6 +17,11 @@
         appearance: none;
       }
     </style>
+   {% comment %} <script>
+       setTimeout(()=>{
+    alert('Hello shimul , wellcome back')
+},2000)
+   </script> {% endcomment %}
   </head>
   <body class="bg-gray-200 bd">
     <!-- 🌐 Top Navbar -->
@@ -64,7 +69,7 @@
         <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
       </div>
       <!-- Icons -->
-      <button>
+     
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
@@ -77,8 +82,8 @@
       <div class="flex space-x-4"></div>
     </header>
     <!-- 🧭 Main Navigation -->
-    <nav>
-      <ul class="flex justify-around bg-gray-700 text-white">
+    <nav class="">
+      <ul class="hidden sm:flex justify-around bg-gray-700 text-white" id="navitems">
         <li class="p-2 hover:bg-gray-600 cursor-pointer">Home</li>
         <li class="p-2 hover:bg-gray-600 cursor-pointer">Man’s</li>
         <li class="p-2 hover:bg-gray-600 cursor-pointer">Women’s</li>
@@ -149,6 +154,7 @@
     <video Controls class="w-44">
       <source src="{{ product.song.url }}" type="video/mp4">
     </video> {% endfor %}
+    <a href="{% url 'order' %}">Order now</a>
     <!-- 🌐 Footer -->
     <footer class="bg-gray-900 text-white text-center py-3">
       <p>© 2025 Shimul Ecommerce | All Rights Reserved</p>

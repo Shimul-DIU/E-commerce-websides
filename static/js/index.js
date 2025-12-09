@@ -4,7 +4,7 @@ let night=document.querySelector(".dark");
 let Catagories=document.getElementById("ct");
 let closBar=document.getElementById("close_bar");
 let Man=document.getElementById("man")
-let UnorderList=document.getElementById("uol")
+let UnorderList=document.getElementById("navitems")
 let Dopedowm1=document.getElementById("dopdowm1")
 let woMan=document.getElementById("women")
 let Dopedowm2=document.getElementById("dopdowm2")
@@ -40,8 +40,6 @@ if (window.innerWidth<768){
         })
     })
 }
-
-
 else{
     UnorderList.classList.add('relative')
     Dopedowm1.classList.add('dopdn1')
@@ -49,6 +47,7 @@ else{
     Dopedowm3.classList.add('dopdn1')
     catagoriz_text.classList.remove('text-sm');
 }
+
 
 Bar.addEventListener('click',function(){
     UnorderList.classList.remove('hidden')
